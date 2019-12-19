@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     #url: jdbc:h2:tcp://localhost/~/test
-    url: jdbc:h2:tcp:mem:testdb
+    url: jdbc:h2:mem:test_db;INIT=CREATE SCHEMA IF NOT EXISTS test_db\;RUNSCRIPT FROM '~/sql/populate.sql';DB_CLOSE_DELAY=-1
     driver-class-name: org.h2.Driver
     username: sa
   jpa:
