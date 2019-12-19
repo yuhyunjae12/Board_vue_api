@@ -65,7 +65,9 @@ public class MessageConfiguration implements WebMvcConfigurer {
 	public void addCorsMappings(CorsRegistry registry) {
 		registry.addMapping("/**")
 		.allowedMethods("GET", "POST", "PUT", "DELETE")
-		.allowedOrigins("/**");
+		.allowedOrigins("*")
+		.allowCredentials(false)
+        .maxAge(3600);
 		WebMvcConfigurer.super.addCorsMappings(registry);
 	}
     
